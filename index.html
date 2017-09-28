@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- This stylesheet contains specific styles for displaying the map
+         on this page. Replace it with your own styles as described in the
+         documentation:
+         https://developers.google.com/maps/documentation/javascript/tutorial -->
+    <link rel="stylesheet" href="https://developers.google.com/maps/documentation/javascript/demos/demos.css">
+    <title>Jane Doe - Photographer and Web Designer</title>
+  </head>
+  <body>
+
+    <div class="bg-profile">
+      <img src="img/profile_girl.jpg" alt="Imagem do Perfil">
+    </div>
+
+    <main>
+
+      <a href="javascript:void(0);" class="btn-nav" onclick="nav();">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <header id="home">
+        <h1>Jane Doe</h1>
+        <p>Photographer and Web Designer.</p>
+
+        <div class="profile">
+          <img src="img/profile_girl.jpg" alt="Imagem de perfil">
+        </div>
+
+        <button type="button" name="btn-resume">
+          <i class="fa fa-download" aria-hidden="true"></i> <a href="curriculo/" download>Download Resume</a>
+        </button>
+
+      </header>
+
+      <div class="container">
+        <div class="portfolio" id="portfolio">
+          <p>My Portfolio</p>
+          <hr>
+          <div class="grid">
+            <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/sailboat.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/chef.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="">
+            <img src="https://www.w3schools.com/w3images/p6.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container">
+        <div class="about" id="about">
+          <p>About</p>
+
+          <hr>
+
+          <div class="conteudo">
+            <p>
+                Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
+          <p>My Skills</p>
+
+          <div class="conteudo skills">
+            <p>Photography</p>
+            <div class="skill"> <p>95%</p> </div>
+
+            <p>Web Design</p>
+            <div class="skill"> <p>85%</p> </div>
+
+            <p>Photoshop</p>
+            <div class="skill"> <p>80%</p> </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="contact" id="contact">
+          <p>Contact Me</p>
+
+          <hr>
+
+          <div class="conteudo">
+            <p>
+              <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> Chicago, US
+            </p>
+
+            <p>
+              <i class="fa fa-phone fa-2x" aria-hidden="true"></i> Phone: +00 151515
+            </p>
+
+            <p>
+              <i class="fa fa-envelope fa-2x" aria-hidden="true"></i> Email: mail@mail.com
+            </p>
+          </div>
+
+          <div id="style-selector-control"  class="map-control">
+            <select id="style-selector" class="selector-control">
+              <option value="default">Default</option>
+              <option value="silver">Silver</option>
+              <option value="night">Night mode</option>
+              <option value="retro" selected="selected">Retro</option>
+              <option value="hiding">Hide features</option>
+            </select>
+          </div>
+
+          <div id="map"></div>
+
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Cpaq-no8o2GJMnM30gNKkgpiEyLGOgg&callback=initMap"
+           async defer></script>
+
+        </div>
+      </div>
+
+      <footer>
+        <p>Jane Doe - Photographer and Web Designer</p>
+        <br>
+        <p>
+          <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+          <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+          <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+        </p>
+      </footer>
+
+    </main>
+
+
+
+    <!--SCRIPT-JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/navFunction.js" charset="utf-8"></script>
+    <script src="js/scrollNav.js" charset="utf-8"></script>
+    <script src="js/skill.js" charset="utf-8"></script>
+    <script src="js/mapJS.js" charset="utf-8"></script>
+
+  </body>
+</html>

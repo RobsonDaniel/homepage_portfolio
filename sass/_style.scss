@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.container { width: 90%; margin: #{(70/16)}rem auto 0 auto; }
+
+.container-fluid { width: 100%; margin: 0 auto; }
+
+.grid {
+  column-width: #{(200/16)}rem;
+  column-gap: #{(18/16)}rem;
+
+  img { width: 100%; margin-bottom: #{(20/16)}rem; }
+}
+
+main {
+  @media screen and (min-width: 600px) { width: 60%; float: right; }
+
+  .btn-nav {
+    z-index: 10;
+    position: fixed;
+    display: block;
+    right: #{(15/16)}rem;
+    top: #{(15/16)}rem;
+
+    .bar1, .bar2, .bar3 {
+        width: #{(35/16)}rem;
+        height: #{(5/16)}rem;
+        background-color: $bg-nav;
+        margin: #{(6/16)}rem 0;
+        transition: 0.4s;
+    }
+  }
+
+  .animarBtnNav {
+
+    .bar1, .bar3 { background-color: $bg-color; }
+
+    .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .bar2 { opacity: 0; }
+
+    .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+
+  nav {
+    z-index: 9;
+    background-color: $bg-nav;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    padding-top: #{(150/16)}rem;
+    overflow-y: auto;
+    transition: 0.5s;
+
+    a {
+      text-decoration: none;
+      position: relative;
+      color: $cl-grey;
+      display: block;
+      text-align: center;
+      padding: #{(13/16)}rem 0;
+      font-size: #{(36/16)}rem;
+      transition: 0.3s;
+
+      &:hover { color: $bg-color; }
+    }
+  }
+
+  header {
+    text-align: center;
+    padding-top: #{(160/16)}rem;
+
+    @media screen and (min-width: 600px) { height: 100vh; }
+
+    h1 {
+      font-size: #{(64/16)}rem;
+      margin-bottom: #{(32/16)}rem;
+    }
+  }
+
+  .profile {
+    img {
+      display: block;
+      width: 85%;
+      margin: #{(25/16)}rem auto;
+      // display: none;
+
+      @media screen and (min-width: 600px) { display: none; }
+    }
+  }
+
+  button[name="btn-resume"] {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background-color: $bg-btn-resume;
+    padding: #{(14/16)}rem #{(28/16)}rem;
+    margin: #{(32/16)}rem auto;
+    display: block;
+    font-size: 1rem;
+
+    .fa-download { padding-right: #{(5/16)}rem; }
+
+    a { text-decoration: none; color: $bg-nav; }
+  }
+
+  .portfolio {
+    padding-top: #{(15/16)}rem;
+
+    p {
+      color: grey;
+      margin-bottom: #{(30/16)}rem;
+      font-size: #{(30/16)}rem;
+    }
+
+    hr {
+      margin-bottom: #{(20/16)}rem;
+      border: #{(1/16)}rem solid $bg-btn-resume;
+    }
+  }
+
+  .about {
+    @extend .portfolio;
+
+    .conteudo {
+      text-align: justify;
+
+      p { font-size: 1rem; }
+    }
+
+    .skills { visibility: hidden; }
+
+    .animarSkills {
+      animation: animarSkills 1s;
+      visibility: visible;
+    }
+
+    @keyframes animarSkills {
+      0% { opacity: 0; transform: translateY(70%); }
+      100% { opacity: 1; transform: translateY(0%); }
+    }
+
+    .skill {
+      background-color: $bg-btn-resume;
+
+      p {
+        color: $bg-color;
+        text-align: center;
+        background-color: $cl-grey;
+        padding: #{(5/16)}rem 0;
+      }
+    }
+  }
+
+  .contact {
+    @extend .portfolio;
+
+    .conteudo {
+      p { font-size: 1rem; }
+      .fa { padding-right: #{(15/16)}rem; }
+    }
+  }
+
+  footer {
+    color: $cl-grey;
+    background-color: $bg-btn-resume;
+    padding: #{(70/16)}rem 0;
+    text-align: center;
+    margin-top: #{(100/16)}rem;
+
+    .fa { padding: #{(5/16)}rem; cursor: pointer; }
+  }
+
+}
+
+
+.bg-profile {
+  display: none;
+
+  @media screen and (min-width: 600px) { display: block; }
+
+  img {
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+  }
+
+}
+
+.map-control {
+  background-color: #fff;
+  border: #{(1/16)}rem solid #ccc;
+  box-shadow: 0 #{(2/16)}rem #{(2/16)}rem rgba(33, 33, 33, 0.4);
+  font-family: 'Roboto','sans-serif';
+  margin: #{(10/16)}rem;
+  /* Hide the control initially, to prevent it from appearing
+     before the map loads. */
+  display: none;
+}
+/* Display the control once it is inside the map. */
+#map:hover .map-control { display: block; }
+
+.selector-control {
+  font-size: #{(14/16)}rem;
+  line-height: #{(30/16)}rem;
+  padding: 0 #{(5/16)}rem;
+}
